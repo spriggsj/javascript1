@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Day 2</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<header>
+		<div id="d2top">
+			
+			<a href="index.html"><button>Day 1</button></a>
+			
+			<a href="day2.html"><button>Day 2</button></a>
+			<a href="#asignment"><button>Day 2 name assignment</button></a>
+			<a href="#asignment2"><button>Day 2 number assignment</button></a>
+
+			<a href="day3.html"><button>Day 3</button></a>
+
+		</div>
+	</header>
+
+	<div><h1>Javascript 1</h1><br><h2 id="day"> Day 2 </h2></div>
+
+	<div><h2>Using Javascript in a web page</h2></div>
+
+	<div>
+		<ul>
+			<li>Inline JavaScript</li>
+			<li>Inline Script Tag</li>
+			<li>Script Tag with Src (imports a separate JS file into your page)</li>
+			
+		</ul>
+	</div>
+
+	<div><h2>Inline JavaScript</h2>Example: In a HTML document the <em>onclick</em> attribute can be used to add some functionality to a DOM node.(This is not the recommended way of attaching functionality to your DOM elements.) This is considered inline since the code that JavaScript will execute is inside the node itself. It lives in the page, thus it is considered inline.</div>
+
+	<div><h2>Inline Script Tag</h2>Example 2: The next way is another type of inline JavaScript, in that it's JavaScript that is executed in the context of the html page. IE the code itself still lives inside the html page,  but in its own script tag.<br></div>
+
+	<div><<em>script</em>>Code here<<em>/script</em>></div>
+
+	<div><h2>Script tag with Src</h2>Example 3: The prefered way of including scripts in your page is similar to the previous way, except instead of putting your JavaScript inline you specify an external JavaScript file that the browser will include in your page and execute.<br></div>
+	<div><<em>script type="text/javascript" src="app.js"</em>><<em>/script</em>></div>
+
+	<div><h2>Execution of a JS file</h2>JavaScript always executes from top to bottom. So if you include two JavaScript files the browser will first download the top file execute it line by line, then download the next file down and execute it line by line. In the case where you want to utilize something defined in one JavaScript file by another JavaScript file make sure the file that initializes is positioned above in the order of operation. <br></div>
+
+	<div><h2>User Interaction</h2></div>
+
+	<div>Alert, Confirm, and Prompt functions.<br>First, what is a function?<br>A function is a group of JavaScript code that behaves and or performs a specific set of actions. You <em>call</em> a function. It <em>returns</em> a value. Alert, confirm, and prompt can each be used to convey or solicit information from a user.</div>
+
+	<div><h2>Alert</h2>Tells the user something. Presents a message to the user <br></div>
+
+	<h3 onclick="alert('This is an alert')";>click to alert</h3>
+
+	<div><h2>Confirm</h2>Confirms a users action. Returns a true or false Boolean depending on the button the user clicks.<br></div>
+
+	
+
+	<button onclick="myFunction5()">Click for confirm value</button>
+
+
+	<p id="confirmValue"></p>
+
+<p id="demo5"></p>
+
+	<div><h2>Prompt</h2>Prompt asks the user for input and then enables the input in your script.<br></div>
+
+	<h3 onclick="prompt('User input here')";>Click for prompt</h3>
+
+
+	<div id="asignment"><h2>Day 2 name assignment</h2></div>
+
+	<button id="button"onclick="myFunction()">Click for name</button>
+	<!--Create a new script called app.js and program it to do the following:
+Ask for your first name
+Ask for your last name
+Log your first name to the console
+Alert your last name
+Confirm (anything) and alert the result of the confirm
+Include your app.js file in a blank empty html page-->
+	<p>Displays last name below:</p>
+	<p id="demo"></p>
+
+	<a href="#d2top"><button>Back to top</button></a>
+
+	<div><h2>Code Syntax</h2></div>
+
+	<div>
+		<ul>
+			<li>Readability matters!</li>
+			<li>camelCasing</li>
+			<li>CaSe SeNsItIvItY</li>
+			<li>White Space</li>
+			<li>Commentes</li>
+
+			
+		</ul>
+	</div>
+
+	<div><h2>Operators</h2>Operators allow us to take action and do something with the variables we've created.<br>Some operators you will see often include:</div>
+
+	<div>
+		<ul>
+			<li>= (equals, assignment)
+</li>
+			<li>+ (addition)</li>
+			<li>- (subtraction)</li>
+			<li>* (multiplication)</li>
+			<li>/ (division)</li>
+			<li>% (modulus)</li>
+			
+		</ul>
+	</div>
+
+	<div><h2>Shorthand Operators</h2></div>
+
+	<div>
+		<ul>
+			<li>+=</li>
+			<li>-=</li>
+			<li>*=</li>
+			<li>/=</li>
+			<li>++</li>
+			<li>--</li>
+			
+		</ul>
+	</div>
+
+	<div><h2>Comparison</h2></div>
+
+	<div>
+		<ul>
+			<li>== (loose comparison, value only)</li>
+			<li>=== (strict comparison, value and type)</li>
+			<li>!= (loose not equal comparison)</li>
+			<li>!== (strict not equal comparison)/li>
+			<li>< (less than)</li>
+			<li>> (greater than)</li>
+			<li><= (less than or equal to)</li>
+			<li>>= (greater than or equal to)</li>
+			
+		</ul>
+	</div>
+
+	<div><h2>Logical</h2></div>
+
+	<div>
+		<ul>
+			<li>&& (and)</li>
+			<li>|| (or)</li>
+			
+		</ul>
+	</div>
+
+	<div><h2>Remember operator precedence?</h2></div>
+
+	<div>
+		<ul>
+			<li>Parentheses</li>
+			<li>Multiplication / Division</li>
+			<li>Addition / Subtraction</li>
+
+		</ul>
+	</div>
+
+	<div>parseInt(number) can be used to convert floating point numbers to integers or convert a string into an integer<br>If you try to parse a value that can’t be turned into a number, you will get NaN (not a number)</div>
+
+	<code>
+		var a = 1.6;<br>
+var b = parseInt(a); // number data type 1<br>
+
+var c = "5";<br>
+var d = parseInt(c); // number data type 5<br>
+
+var e = "foo";<br>
+var f = parseInt(e); //NaN<br>
+console.log( isNaN(f) ); //true<br>
+	</code>
+
+	<div><h2>parseInt Excersize</h2></div>
+	
+	<div id="asignment2"><h2>Day 2 number assignment</h2></div>
+	
+	<button id="number"onclick="numFunction()">Click for number</button>
+
+	<p>Result shown below:</p>
+  
+  <p id="result"></p>
+
+  <a href="#d2top"><button>Back to top</button></a>
+
+	<!--Create a script and accompanying html file that will:
+Prompt for a number value (provide a default of 10)
+Prompt for a second number value (provide a default of 10)
+Convert the prompted values into integers
+Add the numbers together and alert the user with the result-->
+
+
+	<div><h2>Truthy / Falsy</h2>Certain values in JavaScript, when evaluated, are considered "falsy" or "truthy"<br>The following values are always falsy:<br></div>
+
+	<div>
+		<ul>
+			<li>false</li>
+			<li>0 (literal number zero)</li>
+			<li>"" empty string</li>
+			<li>null</li>
+			<li>undefined</li>
+			<li>NaN (Not a number)</li>
+
+		</ul>
+	</div>
+
+	<div>All other values are truthy, including "0" (zero in quotes), "false" (false in quotes), empty functions, empty arrays, and empty objects.</div>
+
+	<div><h2>Intrinsic Objects</h2>String Object<br>Strings can be treated as objects in JavaScript. This gives us access to special built-in functions to use on strings.<br>length(), substring(x,y), toUpperCase(), …<br></div>
+
+	<code>
+		var strA = "0123456789";<br>
+
+// this code sets strB to "456"<br>
+var strB = strA.substring(4,7);<br>
+
+var str1 = "airplane";<br>
+// set str2 to "AIRPLANE"<br>
+var str2 = str1.toUpperCase();<br>
+	</code>
+
+	<div><h2>Math Object</h2><br>
+Contains functions to perform mathematical operations and conversions<br>
+Math.PI, Math.round(), Math.sqrt(), …<br>
+Date Object<br>
+The Date object can be used to represent and compare dates, as well as get the current system time.<br>
+	</div>
+
+	<code>
+		var today = new Date();<br>
+var thisYear = today.getFullYear();<br>
+
+	</code>
+
+
+	<div><h2>Number Object</h2><br>
+The number object contains special numeric constants that are important to JavaScript.<br>
+Number.MAX_VALUE, Number.MIN_VALUE, Number.NaN,<br>
+ Number.POSITIVE_INFINITY, Number.NEGATIVE_INFINITY<br>
+
+<br>
+	</div>
+
+
+	 <a href="#d2top"><button>Back to top</button></a>
+
+
+<script type="text/javascript" src="js/app.js"></script>		
+</body>
+</html>

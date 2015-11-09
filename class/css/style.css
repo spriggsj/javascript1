@@ -1,0 +1,14 @@
+body {
+	background-color: #FFEEBD;
+}
+button {
+	background-color: #001142;
+	color:white;
+}
+em {color: blue;}
+
+h3 {color: red;}
+
+#demo1, #result, #demo, #confirmValue {color:red;}
+
+#day {color:#001142;}
