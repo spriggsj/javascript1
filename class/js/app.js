@@ -54,3 +54,116 @@ function myFunction5() {
     document.getElementById("confirmValue").innerHTML = x;
 }
 
+function newFunction (){
+var favMovie = prompt("enter your favorite movie");
+var favFood = prompt("enter your favorite food");
+var petName = prompt("enter the name of your favorite pet");
+var con = (favMovie + ' ' + favFood + ' ' + petName);
+
+console.log(  favMovie + ", " + favFood + ", " + petName);
+ document.getElementById("pet").innerHTML = con;
+}
+
+var myLogic = 0;
+var a = 1;
+var b = 1;
+if(a < b){
+  console.log("true");
+} else {
+  console.log("false")
+}
+
+var myLogic = 0;
+var a = 1;
+var b = 3;
+var c = false;
+if((a < b) && c){
+  console.log("true");
+} else {
+  console.log("false")
+}
+
+var myLogic = 0;
+var a = 1;
+var b = 3;
+var c = false;
+var d = true;
+if((a < b) && c || d){
+  console.log("true");
+} else {
+  console.log("false")
+}
+
+var myLogic = 0;
+var a = 1;
+var b = 3;
+var c = false;
+var d = true;
+if((a < b) && (c || d)){
+  console.log("true");
+} else {
+  console.log("false")
+}
+
+/*function ageFunction () {
+var yBorn = prompt("enter year born 1973");
+var  age = 2015 - yBorn;
+if (age < 18){
+  console.log("you are a teen")
+} else (age > 18){
+  console.log("you are old")
+
+alert(age);}*/
+
+
+function ageFunction (){
+var yBorn = prompt("enter year born 1973");
+var  age = 2015 - yBorn;
+if (age < 18){
+  console.log("you are a teen");
+} else (age > 18);
+  console.log("you are old");
+
+alert(age);
+document.getElementById("old").innerHTML = (age);
+}
+
+function switcheroo (){
+var character = prompt("enter a, b, c");
+var characterLowerCase = character.toLowerCase();
+if(!isNaN(character)){
+
+  alert('only numbers please');
+} else {
+switch (character) {
+  case "a":
+    alert("you entered 'a'");
+    break;
+  case "b":
+    alert("you entered 'b'");
+    break;
+  case "c":
+    alert("you entered 'c'");
+    break;
+  default:
+    alert("I said a b or c");  
+}
+}
+}
+
+/*Prompt the user for something that they would like to do.
+Make sure that the user actually types something.
+If the user has not typed anything, alert them that they need to type something and then terminate the program.
+If they have input a to-do item, alert the user with the item and console log it.
+*/
+
+function doit (){
+var a = prompt("What would you like to do?");
+  if (a == null || a == "") {
+  console.log("please enter something to do");
+      
+  }else{
+  console.log(a);
+  }
+}
+
