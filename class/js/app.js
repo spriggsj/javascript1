@@ -121,28 +121,33 @@ var yBorn = prompt("enter year born 1973");
 var  age = 2015 - yBorn;
 if (age < 18){
   console.log("you are a teen");
-} else (age > 18);
+  alert(age);
+document.getElementById("old").innerHTML = (age + " too young");
+} else{
   console.log("you are old");
-
-alert(age);
-document.getElementById("old").innerHTML = (age);
+  alert(age);
+document.getElementById("old").innerHTML = (age);}
 }
+
 
 function switcheroo (){
 var character = prompt("enter a, b, c");
-var characterLowerCase = character.toLowerCase();
+/*var characterLowerCase = character.toLowerCase();*/
 if(!isNaN(character)){
-
-  alert('only numbers please');
+   
+  alert('Only letters a, b, or c please');
 } else {
 switch (character) {
   case "a":
+  case "A":  
     alert("you entered 'a'");
     break;
   case "b":
+  case "B":  
     alert("you entered 'b'");
     break;
   case "c":
+  case "C":  
     alert("you entered 'c'");
     break;
   default:
@@ -150,7 +155,6 @@ switch (character) {
 }
 }
 }
-
 /*Prompt the user for something that they would like to do.
 Make sure that the user actually types something.
 If the user has not typed anything, alert them that they need to type something and then terminate the program.
@@ -164,6 +168,6 @@ var a = prompt("What would you like to do?");
       
   }else{
   console.log(a);
-  }
+  document.getElementById("do").innerHTML = (a);}
 }
 
