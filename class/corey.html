@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<title>JavaScript Test Page</title>
+		
+		<!-- Include external css files here -->
+		<link rel="stylesheet" type="text/css" href="css/styles.css">
+	</head>
+	<body>
+		<!--<label for="input1Id">Input 1:</label>
+  		<input type="text" id="input1Id" /><br />
+
+  		<label for="input2Id">Input 2:</label>
+		<input type="text" name="input2" id="input2Id">
+  		
+  		<input type="button" name="goBtn" id="goBtnId" value="Go!"onclick="goBtnId();">
+        
+        <p>Text Output:</p>
+        <textarea rows="5" id="textOutputId"></textarea>-->
+		
+		<!-- Include JavaScript files at the end of the HTML file to improve page loading times -->
+
+	<form>
+    	<!--imput box 1 type text & placeholder in box that says input 1:-->
+    	<input id="inputId1" type="text" placeholder="input 1:" /><br>
+
+		<!--imput box 2 type text & placeholder in box that says input 2:-->
+    	<input id="inputId2" type="text" placeholder="input 2:" />
+
+    	<!--button with id of goBtnId. Button says go. onclick calls function "insert"-->
+    	<input type="button" id="goBtnId" value="go" onclick="insert()" />
+  </form>
+
+  <p>Text output:</p>
+  
+  <!--Text box with 5 rows & id of textOutputId-->
+  <textarea rows="5" id="textOutputId"></textarea>
+
+  		<!--Link to external js file containing functions at bottom of page-->
+		<script type="text/javascript" src="js/scripts.js"></script>
+	</body>
+</html>

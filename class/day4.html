@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Day 4</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<header>
+		<div id="d3top">
+			
+			<a href="index.html"><button>Day 1</button></a>
+			
+			<a href="day2.html"><button>Day 2</button></a>
+			<a href="day3.html"><button>Day 3</button></a>
+			<a href="day4.html"><button>Day 4</button></a>
+			<a href="D4homeWork.html"><button>Day 4 home work</button></a>
+
+		</div>
+	</header>
+	<div><h1>Javascript 1</h1><br><h2 id="day"> Day 4 </h2></div>
+
+	<p> Wrote text based adventure game incorporating if else and switch statements</p>
+
+	<button onclick="adventure()">Click for adventure</button><br>
+
+	<h2>JavaScript code for game</h2>
+
+	<code>function adventure (){<br>
+var enter = confirm("you are outside a forest. Press ok to enter");<br>
+if (enter){<br>
+  //go into cabin<br>
+  //3 bowls <br>
+    var bowl = prompt("Three bowls which one do you pick 1, 2 or 3");<br>
+    var bowl = parseInt(bowl);<br>
+ 
+    
+  switch (bowl) {<br>
+    default: console.log("you died"); alert("you died");<br>
+      break;<br>
+      
+      case 1: console.log("It's too hot. you died"); alert("It's too hot. <br>you died");<br>
+      break;<br>
+      
+    case 2: console.log("its too cold. you died"); alert("its too cold. you <br>died");<br>
+      break;<br>
+      
+    case 3: console.log("It's delicious"); alert("It's delicious");<br>
+      var hours = "the bowl makes you sleep. How many hours do you  wan't to<br> sleep?";<br>
+      var sleep = prompt(hours);<br>
+      sleep = parseInt(sleep);<br>
+      
+      if(sleep < 2){<br>
+        console.log("You wake up and then fall to your death"); alert("You <br>wake up and then fall to your death");<br>
+      }else{<br>
+        console.log("you never wake up");   alert("you never wake up"); <br> 
+      }<br>
+  }<br>
+  
+  
+}else{<br>
+  // don't go in<br>
+  console.log("You died"); alert("You died");<br>
+}<br>
+}<br>
+</code>
+
+
+
+
+
+
+<script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>

@@ -171,3 +171,41 @@ var a = prompt("What would you like to do?");
   document.getElementById("do").innerHTML = (a);}
 }
 
+//Day 4 adventure game
+function adventure (){
+var enter = confirm("you are outside a forest. Press ok to enter");
+if (enter){
+  //go into cabin
+  //3 bowls 
+    var bowl = prompt("Three bowls which one do you pick 1, 2 or 3");
+    var bowl = parseInt(bowl);
+ 
+    
+  switch (bowl) {
+    default: console.log("you died"); alert("you died");
+      break;
+      
+      case 1: console.log("It's too hot. you died"); alert("It's too hot. you died");
+      break;
+      
+    case 2: console.log("its too cold. you died"); alert("its too cold. you died");
+      break;
+      
+    case 3: console.log("It's delicious"); alert("It's delicious");
+      var hours = "the bowl makes you sleep. How many hours do you  wan't to sleep?";
+      var sleep = prompt(hours);
+      sleep = parseInt(sleep);
+      
+      if(sleep < 2){
+        console.log("You wake up and then fall to your death"); alert("You wake up and then fall to your death");
+      }else{
+        console.log("you never wake up");   alert("you never wake up");  
+      }
+  }
+  
+  
+}else{
+  // don't go in
+  console.log("You died"); alert("You died");
+}
+}
