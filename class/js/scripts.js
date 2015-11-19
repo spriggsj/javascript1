@@ -48,7 +48,7 @@ function clearAndShow () {
   // (.join )The join() method joins all elements of an array into a string.
   // (", ")the array elements are separated with a comma and a space. 
   // The "\\\n" was my attempt to start a new line but still kinda wonkey
-  messageBox.innerHTML += "Array1: " + inputId1.join(", ") + "\\\n"; 
+  messageBox.innerHTML += "Array1: " + inputId1.join(", ") + "\n"; 
   
   // same as above except targets inputId2
   messageBox.innerHTML += "Array2: " + inputId2.join(", ") + "";
@@ -57,97 +57,81 @@ function clearAndShow () {
 //*********************************************************************//
 //*********************************************************************//
 
-/* JavaScript Test Code Template
-   Corey Shuman
-   11/4/15
-   
-   This files contains some shortcut functions
-   to manipulate the values for two input textboxes.
-   It also sets up an event handler to handle
-   button clicks on the page.
-*/
-/*Create an empty array at the top of the file (right after the intro comment)
-Create a function that takes the text from Input 1 and pushes it into the array
-Use the function domInput1() to do this
-When the user clicks the “Go!” button, call your function you created that adds the Input 1 text to your array. Do this by calling for function inside handleGoButtonClick().
- You should also clear the contents of Input 1 by calling domInput1("");
-Print the contents of you array to the Text Output window using domTextOutput(text);
-To print an array as a string, call the .toString() function on the array.
-BONUS: If you get the above to work, add a function to your script that will add the contents of Input 2 to the BEGINNING of the array
-How could this be accomplished? Hint, think about using slice/splice and multiple arrays, OR, do some internet research. A function exists to do this for you that we haven’t covered here.
-*/
-
-// USER CODE - Put your code here!
-/*var domInput1 = [];
-
-            function goBtnId() {
-                var str = document.getElementById("input1Id");
 
 
-                domInput1.push(str.value);
-                str.value = "";
-                str.focus();
-                var area = document.getElementById("textOutputId");
-                area.value = "";
-                for (var i = 0; i < domInput1.length; i++) {
-                    area.value += domInput1[i] + "\n";
-                }
-            }
-	
-/*
-
-*/
-
-
-// This function is called every time the button is clicked
-	//	function handleGoButtonClick(event) {
-	// do events here
-	//Example - set value of input 1 to "Hello JavaScript!"
-	//	domInput1("Hello JavaScript!");
-	//Example - get value of input 1 and alert it to user
-	//	alert( domInput1() );
-	//Example - put text from input 2 into text output box
-	//	domTextOutput( domInput2() );
-// }
+var squareNumber = function(){
+  var digitalInput = document.getElementById('digit'),
+      v = digitalInput.value;
+  
+  if (!isNaN(v)) {
+    document.getElementById('output').innerHTML = v * v;
+  }
+  else {
+    document.getElementById('output').innerHTML = 'please use a number';
+  }
+  digitalInput.value = '';
+};
 
 
 
-// HELPER FUNCTIONS - The following code is helper functions to get you started
+var capId = [];
+var capIdInput = document.getElementById("capId");
 
-// This function sets and returns the value of Input 1
-/*function domInput1(newval) {
-	var input1Reference = document.getElementById("input1Id");
-	if(newval !== undefined) {
-		input1Reference.value = newval;
-	}
-	return input1Reference.value;
-}*/
-
-// This function sets and returns the value of Input 2
-/*function domInput2(newval) {
-	var input2Reference = document.getElementById("input2Id");
-	if(newval !== undefined) {
-		input2Reference.value = newval;
-	}
-	return input2Reference.value;
+function insert2 ( ) {
+ capId.push( capIdInput.value );
+ clearAndShow2();
 }
 
-// This function sets and returns the value of Input 2
-function domTextOutput(newval) {
-	var textOutputReference = document.getElementById("textOutputId");
-	if(newval !== undefined) {
-		textOutputReference.innerHTML = newval;
-	}
-}
+function clearAndShow2 () {
+  capIdInput.value = "";
+  textOutputId2.innerHTML = "";
+  var text = capId[0];
+  
+  if(isNaN(text[0])) {
+    textOutputId2.innerHTML += text[0].toUpperCase() + text.slice(1) + ".";
+  }else {
+    textOutputId2.innerHTML += "error use alphanumeric characters only";
+  } 
+ }
 
-/* This is an Immediately Invoked Function Expression (IIFE)
-   The code here runs immediately after the page loads.
-   In this case, we are setting up an event handler for
-   button presses.
-*/
 
-/*(function() {
-	document.getElementById("goBtnId").onclick = handleGoButtonClick;
-}());
 
-*/
+var silly = [];
+var sillyInput = document.getElementById("sillyString");
+
+var word = function(){
+ silly.push( sillyInput.value );
+ clearAndShow3();
+};
+
+function clearAndShow3 () {
+  sillyInput.value = "";
+  result.innerHTML = "";
+  var s = silly[0];
+  var s1 = s.length;
+  var s2 = Math.floor(s.length / 2);
+  var s3 = (s2 * 2);
+  var s4 = s.slice(s2,s3 +1);
+  var b1 = (s2 );
+  var b2 = s.slice(0,b1);
+  console.log (s1);
+  if(s.length < 2) {
+    result.innerHTML += "error please try again";}else {
+    
+      result.innerHTML += (s4 + b2);
+  } 
+ }
+  
+  
+  /*var ave = [];
+for(var i = 0; i < 10; i++)
+   ave.push(prompt("Enter a number"));
+alert (ave);*/
+
+  
+
+
+
+
+
+

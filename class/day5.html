@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Day 5</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<header>
+		<div id="d3top">
+			
+			<a href="index.html"><button>Day 1</button></a>
+			
+			<a href="day2.html"><button>Day 2</button></a>
+			<a href="day3.html"><button>Day 3</button></a>
+			<a href="day4.html"><button>Day 4</button></a>
+			<a href="day5.html"><button>Day 5</button></a>
+
+		</div>
+	</header>
+	<div><h1>Javascript 1</h1><br><h2 id="day"> Day 5 </h2></div>
+	
+	<form>
+    <p> Enter number to be squared</p>
+  
+    <input id="digit" type="text" placeholder="Number" /><br>
+    
+    
+    <input type="button" value="press" onclick="squareNumber()" />
+  </form>
+ 
+  <p id="output"></p>
+ 
+
+  <code>var squareNumber = function(){<br>
+  var digitalInput = document.getElementById('digit'),<br>
+      v = digitalInput.value;<br>
+  
+  if (!isNaN(v)) {<br>
+    document.getElementById('output').innerHTML = v * v;<br>
+  }<br>
+  else {<br>
+    document.getElementById('output').innerHTML = 'please use a number';<br>
+  }<br>
+  digitalInput.value = '';<br>
+};<br>
+
+</code>
+
+  <form>
+ 
+ 
+  <p> Enter string to be altered</p>
+  
+    <input id="capId" type="text" placeholder="Capitalize and . " /><br>
+    
+    
+    <input type="button" value="Capitalize" onclick="insert2()" />
+  </form>
+ 
+ <textarea rows="5" id="textOutputId2"></textarea>
+
+
+
+ <code><br>var capId = [];<br>
+var capIdInput = document.getElementById("capId");<br>
+
+function insert ( ) {<br>
+ capId.push( capIdInput.value );<br>
+ clearAndShow();<br>
+}<br>
+
+function clearAndShow () {<br>
+  capIdInput.value = "";<br>
+  textOutputId2.innerHTML = "";<br>
+  var text = capId[0];<br>
+  
+  if(isNaN(text[0])) {<br>
+    textOutputId2.innerHTML += text[0].toUpperCase() + text.slice(1) + ".";<br>
+  }else {<br>
+    textOutputId2.innerHTML += "error use alphanumeric characters only";<br>
+  } <br>
+ }</code>
+
+ <form>
+    <p> Enter string to be altered</p>
+  
+    <input id="sillyString" type="text" placeholder="string" /><br>
+    
+    
+    <input type="button" value="press" onclick="word()" />
+  </form>
+ 
+  <p id="result"></p>
+ 
+
+
+
+  
+
+
+<script type="text/javascript" src="js/scripts.js"></script>
+
+</body>
+</html>

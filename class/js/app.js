@@ -209,3 +209,15 @@ if (enter){
   console.log("You died"); alert("You died");
 }
 }
+
+/* recursion
+function doit (){
+var a = prompt("What would you like to do?");
+  if (a == null || a === "") {
+  prompt("please enter something to do");
+    doit();
+      
+  }else{alert(a);
+  document.getElementById("do").innerHTML = (a);}
+}
+ doit();*/
