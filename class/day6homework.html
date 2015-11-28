@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Day 6 homework</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<header>
+		<div id="d3top">
+			
+			<a href="index.html"><button>Day 1</button></a>
+			
+			<a href="day2.html"><button>Day 2</button></a>
+			<a href="day3.html"><button>Day 3</button></a>
+			<a href="day4.html"><button>Day 4</button></a>
+			<a href="day5.html"><button>Day 5</button></a>
+			<a href="day6.html"><button>Day 6</button></a>
+			<a href="day6homework.html"><button>Day 6 homework</button></a>
+
+
+		</div>
+	</header>
+
+
+	<div><h1>Javascript 1</h1><br><h2 id="day"> Day 6 homework </h2></div>
+
+	<div><h2>Day 4 assignment with loops </h2></div>
+	
+	<div><p>Take the assignment you did for Day 4 and you will modify it for this assignment. The completed code is available on Github under Day 4/Assignment.
+In that assignment you used the interface I provided to add elements to the beginning and end of an array when a button was pushed. I want you to make two changes to that code:
+Come up with a way to use a loop to print each array item to the output box one at a time. Since the function to write to the output box will always replace the entire contents, you will need to use a string variable in your loop to concatenate all of the array elements into a single string. Then call domOutputText() on your string.
+Remember how I showed 4 different ways to add elements to the beginning of the array? (That code also exists in the Github example.) Well I want you to demonstrate one way that you could use loops to accomplish this. There are many ways to solve this, the point is to prove that you have a good understanding of loops.
+</p></div>
+
+<form>
+    	<!--imput box 1 type text & placeholder in box that says input 1:-->
+    	<input id="inputId1" type="text" placeholder="input 1:" /><br>
+
+		<!--imput box 2 type text & placeholder in box that says input 2:-->
+    	<input id="inputId2" type="text" placeholder="input 2:" />
+
+    	<!--button with id of goBtnId. Button says go. onclick calls function "insert"-->
+    	<input type="button" id="goBtnId" value="go" onclick="insert()" />
+  </form>
+
+  <p>Text output:</p>
+
+  
+  <!--Text box with 5 rows & id of textOutputId-->
+  <textarea rows="5" id="textOutputId"></textarea>
+
+ 
+
+  		<!--Link to external js file containing functions at bottom of page-->
+		<script type="text/javascript" src="js/scripts.js"></script>
+
+</body>
+</html>

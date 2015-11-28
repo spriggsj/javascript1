@@ -9,6 +9,13 @@ em {color: blue;}
 
 h3 {color: red;}
 
-#demo1, #result, #demo, #confirmValue {color:red;}
+#demo1, #result, #demo, #confirmValue, #output, #confirmValue, #pet, #old, #do, #averageOf4Numbers {color:red;}
 
 #day {color:#001142;}
+
+#code {background-color: #081c00;
+	color: #009900;
+	padding-left: 20px;
+}
+
+.while {color: blue;}

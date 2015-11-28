@@ -57,22 +57,23 @@ function clearAndShow () {
 //*********************************************************************//
 //*********************************************************************//
 
+//need to add edge casing
 
-
-var squareNumber = function(){
-  var digitalInput = document.getElementById('digit'),
-      v = digitalInput.value;
-  
-  if (!isNaN(v)) {
-    document.getElementById('output').innerHTML = v * v;
-  }
-  else {
-    document.getElementById('output').innerHTML = 'please use a number';
-  }
+var squareNumber = function(v){
+  var digitalInput = document.getElementById('digit');
+  var v = digitalInput.value;
+  //var c = parseInt(v) ;
+  console.log(typeof (v.value));
   digitalInput.value = '';
+  if (isNaN (v)|| ""===(v)) {
+        alert(NaN);
+    }else
+	alert(("your number is: ") + (v * v));
+	  
 };
-
-
+//*********************************************************************//
+//*********************************************************************//
+//need to add edge casing
 
 var capId = [];
 var capIdInput = document.getElementById("capId");
@@ -87,15 +88,20 @@ function clearAndShow2 () {
   textOutputId2.innerHTML = "";
   var text = capId[0];
   
-  if(isNaN(text[0])) {
-    textOutputId2.innerHTML += text[0].toUpperCase() + text.slice(1) + ".";
-  }else {
-    textOutputId2.innerHTML += "error use alphanumeric characters only";
+  if(isNaN(text[0]) && (text[text.length-1] === ".")) {
+    textOutputId2.innerHTML += text[0].toUpperCase() + text.slice(1);}
+  
+  if(isNaN(text[0]) && (text[text.length-1] !== ".")){
+     textOutputId2.innerHTML += text[0].toUpperCase() + text.slice(1) + ".";}
+  else if(!isNaN(text[0])) {
+    textOutputId2.innerHTML += "Error use alphanumeric characters only";
   } 
  }
 
 
-
+//*********************************************************************//
+//*********************************************************************//
+//need to add edge casing
 var silly = [];
 var sillyInput = document.getElementById("sillyString");
 
@@ -103,6 +109,7 @@ var word = function(){
  silly.push( sillyInput.value );
  clearAndShow3();
 };
+
 
 function clearAndShow3 () {
   sillyInput.value = "";
@@ -122,16 +129,90 @@ function clearAndShow3 () {
   } 
  }
   
+  //********************************************************************//
+  var numbers = [];
+
+var numbersInput1 = document.getElementById("one");
+
+var numbersInput2 = document.getElementById("two");
+
+var numbersInput3 = document.getElementById("three");
+
+var numbersInput4 = document.getElementById("four");
+
+
+function clearAndShow4 () {
+  numbersInput1.value = "";
+  numbersInput2.value = "";
+  numbersInput3.value = "";
+  numbersInput4.value = "";
+  numbers = [];
+}
+
+function combine () {
+  numbers.push( numbersInput1.value );
+  numbers.push( numbersInput2.value );
+  numbers.push( numbersInput3.value );
+  numbers.push( numbersInput4.value );
+  averageOf4Numbers.innerHTML = "";
   
+  if(numbers[0].length !== 1 || numbers[1].length !== 1 || numbers[2].length !== 1 || numbers[3].length !== 1){
+    averageOf4Numbers.innerHTML += ( "Please enter 4 positive numbers" );
+  }
+  else {
+    var sum = 0;
+    for( var i = 0; i < numbers.length; i++ ){
+      sum += parseInt( numbers[i], 10 ); //don't forget to add the base
+    }
+
+    var avg = sum/numbers.length;
+
+    averageOf4Numbers.innerHTML += ( "The sum of all the elements is: " + sum + " The average is: " + avg );
+  }
+
+  clearAndShow4();
+}
+
+  //********************************************************************//
+
+
+
   /*var ave = [];
 for(var i = 0; i < 10; i++)
    ave.push(prompt("Enter a number"));
 alert (ave);*/
 
   
+//practice substring
+function practice(str,num){
+  
+  if(typeof  str !== "string") {
+    return str;
+  }
+  if(typeof num !== "number"){
+    return str;
+  }
+return str.substring(num, str.length)+ str.substring(0, num);
+}
+practice("taco", 2);
 
+//*********************************************************************//
 
-
-
+//assignment for day 5
+/*function averageOf4Numbers(numbers) {
+	if (!numbers || typeof numbers !== "object" || numbers.length !== 4) {
+        return NaN;
+    }
+	
+	if(typeof numbers[0] !== "number" || typeof numbers[1] !== "number" || typeof numbers[2] !== "number" || typeof numbers[3] !== "number") {
+		return NaN;
+	}
+	
+	if(isNaN(numbers[0]) || isNaN(numbers[1]) || isNaN(numbers[2]) || isNaN(numbers[3])) {
+		return NaN;
+	}
+	
+	return (numbers[0] + numbers[1] + numbers[2] + numbers[3]) / 4;
+} */
 
 

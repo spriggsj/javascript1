@@ -15,6 +15,7 @@
 			<a href="day3.html"><button>Day 3</button></a>
 			<a href="day4.html"><button>Day 4</button></a>
 			<a href="day5.html"><button>Day 5</button></a>
+      <a href="day6.html"><button>Day 6</button></a>
 
 		</div>
 	</header>
@@ -31,26 +32,26 @@
  
   <p id="output"></p>
  
-
-  <code>var squareNumber = function(){<br>
-  var digitalInput = document.getElementById('digit'),<br>
-      v = digitalInput.value;<br>
-  
-  if (!isNaN(v)) {<br>
-    document.getElementById('output').innerHTML = v * v;<br>
-  }<br>
-  else {<br>
-    document.getElementById('output').innerHTML = 'please use a number';<br>
-  }<br>
+  <div id="code">
+  <code>var squareNumber = function(v){<br>
+  var digitalInput = document.getElementById('digit');<br>
+  var v = digitalInput.value;<br>
+  //var c = parseInt(v) ;<br>
+  console.log(typeof (v.value));<br>
   digitalInput.value = '';<br>
+  if (isNaN (v)|| ""===(v)) {<br>
+        alert(NaN);<br>
+    }else<br>
+	alert(("your number is: ") + (v * v));<br>
+	  
 };<br>
 
 </code>
-
+</div>
   <form>
  
  
-  <p> Enter string to be altered</p>
+  <p> Enter string to be capitalized</p>
   
     <input id="capId" type="text" placeholder="Capitalize and . " /><br>
     
@@ -61,27 +62,32 @@
  <textarea rows="5" id="textOutputId2"></textarea>
 
 
-
+ <div id="code"> 
  <code><br>var capId = [];<br>
 var capIdInput = document.getElementById("capId");<br>
 
-function insert ( ) {<br>
+function insert2 ( ) {<br>
  capId.push( capIdInput.value );<br>
- clearAndShow();<br>
+ clearAndShow2();<br>
 }<br>
 
-function clearAndShow () {<br>
+function clearAndShow2 () {<br>
   capIdInput.value = "";<br>
   textOutputId2.innerHTML = "";<br>
   var text = capId[0];<br>
   
-  if(isNaN(text[0])) {<br>
-    textOutputId2.innerHTML += text[0].toUpperCase() + text.slice(1) + ".";<br>
-  }else {<br>
-    textOutputId2.innerHTML += "error use alphanumeric characters only";<br>
+  if(isNaN(text[0]) && (text[text.length-1] === ".")) {<br>
+    textOutputId2.innerHTML += text[0].toUpperCase() + text.slice(1);}<br>
+  
+  if(isNaN(text[0]) && (text[text.length-1] !== ".")){<br>
+     textOutputId2.innerHTML += text[0].toUpperCase() + text.slice(1) + ".";}<br>
+  else if(!isNaN(text[0])) {<br>
+    textOutputId2.innerHTML += "Error use alphanumeric characters only";<br>
   } <br>
- }</code>
+ }<br>
 
+ }</code>
+  </div>
  <form>
     <p> Enter string to be altered</p>
   
@@ -92,9 +98,101 @@ function clearAndShow () {<br>
   </form>
  
   <p id="result"></p>
+
+<div id="code">
+  <code>
+    var silly = [];<br>
+var sillyInput = document.getElementById("sillyString");<br>
+
+var word = function(){<br>
+ silly.push( sillyInput.value );<br>
+ clearAndShow3();<br>
+};<br>
+
+
+function clearAndShow3 () {<br>
+  sillyInput.value = "";<br>
+  result.innerHTML = "";<br>
+  var s = silly[0];<br>
+  var s1 = s.length;<br>
+  var s2 = Math.floor(s.length / 2);<br>
+  var s3 = (s2 * 2);<br>
+  var s4 = s.slice(s2,s3 +1);<br>
+  var b1 = (s2 );<br>
+  var b2 = s.slice(0,b1);<br>
+  console.log (s1);<br>
+  if(s.length < 2) {<br>
+    result.innerHTML += "error please try again";}else {<br>
+    
+      result.innerHTML += (s4 + b2);<br>
+  } <br>
+ }<br>
+  
+  </code>
+ </div>
+
+<form>
+    <p> Enter four numbers to display the average</p>
+  
+    <input id="one" type="number" placeholder="number 1" /><br>
+  
+  <input id="two" type="number" placeholder="number 2" /><br>
+  
+  <input id="three" type="number" placeholder="number 3" /><br>
+  
+  <input id="four" type="number" placeholder="number 4" /><br>
+    
+    
+    <input type="button" value="press" onclick="combine()" />
+  </form>
  
+  <p id="averageOf4Numbers"></p>
 
+  <div id="code">
+    <code>
+      var numbers = [];<br>
 
+var numbersInput1 = document.getElementById("one");<br>
+
+var numbersInput2 = document.getElementById("two");<br>
+
+var numbersInput3 = document.getElementById("three");<br>
+
+var numbersInput4 = document.getElementById("four");<br>
+    
+function combine (){<br>
+  numbers.push( numbersInput1.value );<br>
+  numbers.push( numbersInput2.value );<br>
+  numbers.push( numbersInput3.value );<br>
+  numbers.push( numbersInput4.value );<br>
+  averageOf4Numbers.innerHTML = "";<br>
+  
+  if(numbers[0].length !== 1 || numbers[1].length !== 1 || numbers[2].length !== 1 || numbers[3].length !== 1){averageOf4Numbers.<br>innerHTML += ( "Please enter 4 positive numbers" );<br>
+  }else{<br>
+  var sum = 0;<br>
+for( var i = 0; i < numbers.length; i++ ){<br>
+    sum += parseInt( numbers[i], 10 ); //don't forget to add the base<br>
+}<br>
+
+var avg = sum/numbers.length;<br>
+
+averageOf4Numbers.innerHTML += ( "The sum of all the elements is: " + sum + " The average is: " + avg );<br>
+  
+  
+  clearAndShow4();<br>
+}<br>
+
+function clearAndShow4 () {<br>
+   numbersInput1.value = "";<br>
+   numbersInput2.value = "";<br>
+   numbersInput4.value = "";<br>
+   
+}<br>
+}<br>
+
+    
+    </code>
+ </div>
 
   
 

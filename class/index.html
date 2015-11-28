@@ -16,6 +16,8 @@
 
 			<a href="day3.html"><button>Day 3</button></a>
 			<a href="day4.html"><button>Day 4</button></a>
+			<a href="day5.html"><button>Day 5</button></a>
+			<a href="day6.html"><button>Day 6</button></a>
 		</div>
 	</header>
 
@@ -59,14 +61,15 @@
 	<div><p>Comments don't do anything in the code.<br>They are specifically for documentation of code to help explain its functionality.<br> Comments are written in two ways.<br> Firstly a single line of comments must be started with two forward slashes //<br>Lastly a multi line comment starts with a forward slash followed immediately by an asterisks /*<br>(Multiple lines of code )<br> Followed by an asterisks and another forward slash */</p></div>
 
 
-
+<div id="code">
 	<code>// initialize my variables<br>
 		var name = 'Jason';<br>
 		var a = 1;<br>
 		var b = '2';<br>
 
 	</code>
-
+</div>
+<div id="code">
 	<code>/* initialize my variables<br>
 		"name"<br>
 		"a"
@@ -76,70 +79,71 @@
 		var b = '2';
 
 	</code>
-
+</div>
 	<div><h2>Data Types</h2></div>
 
 	<div><p>String<br>Strings are used to store and manipulate text.<br>Strings can be declared inside both single ' ' and double " " quotes.</p></div>
-
+<div id="code">
 	<code>
 		var text = 'This is a string in JavaScript';<br>
 		var numberString = 'This is a 2nd string';<br>
 	</code>
-
+</div>
 	<div><p>Number<br>JavaScript has one kind of number type which can be written with or without decimals.<br></p></div>
-
+<div id="code">
 	<code>
 		var n1 = 123;<br>
 		var n2 = 123.4;<br>
 	</code>
-
+</div>
 	<div><p>Large or small numbers can be written with scientific (exponent) notation:</p></div>
-
+<div id="code">
 	<code>
 		var largeNumber = 4e5; // 40000<br>
 		var smallNumber = 12e5; // .00012<br>
 	</code>
-
+</div>
 	<div><p>1 + 2 = 3. What about "1" + "2"?  (12)<br>Boolean<br>Booleans can represent one of two values: true or false;</p></div>
-
+<div id="code">
 	<code>
 		var a = true;<br>
 		var b = false;<br>
 	</code>
-
+</div>
 	
 
 	<div><p>Objects <br>Objects are a complex variable type that can contain many variables and functions in one place. These variables and functions are usually refered to as properties and methods.<br>Javascript objects often are used to represent real life objects.<br>Properties usually represent information and values in the object.<br>Methods usually represent actions the object can take.</p></div>
+<div id="code">	
 	<code>
 		var a = {};<br>
 		var color = ["red", "green", "blue"];<br>
 	</code>
-
+</div>
 	<div><p>Null <br>A null is "nothing"<br>It is used to represent something that doesn't exist.<br></p></div>	
-
+<div id="code">
 	<code>
 		var example = null;<br>
 		
 	</code>
-
+</div>
 	<div><p>Undefined <br>A variable without a value is undefined.<br>A variable can be emptied by setting it's value to undefined.<br></p></div>	
-
+<div id="code">
 	<code>
 		var name; // value is undefined.<br>
 		var a = 4;<br>
 		a = undefined;  // Value is undefined, a is now empty<br>
 	</code>
-
+</div>
 	<div><h2>Number Systems</h2></div>
 
 	<div><p>Decimal- base 10 <br>1, 15, 1e7, 1.2, -5.3e2<br>NaN, +-Infinity, +-0<br>Binary- base 2 <br>0b1, 0b1011<br>Hexadecimal- base 16<br>0x1, oxf, 0x15<br>Octal- base 8<br>02, 07, 017<br>Number gotchas<br>.1 + .2<br>11.13 * .08125<br>Floating point number representation</p></div>	
-
+<div id="code">
 	<code>
 		1.2345 = 12345 X 10e-4<br>
 		Significand, base, exponent<br>
 		Computers usually use IEEE 754 standard for Floating Point Arithmetic<br>
 	</code>
-
+</div>
 	<div><p>Many programming languages have many number types, such as integer, float, decimal, long... <br>JavaScript has only one number type: double precision floating point<br>This format stores numbers in 64 bits, where the number (fraction) is stored in bits 0 to 51, the exponent in bits 52 to 62, and the sign in bit 63:</p></div>	
 
 	<table border="1" style="width:100%">
@@ -161,21 +165,21 @@
 
 
 
-<div id="hex"><h1>Day 1 asignment</h1><br></div>
+	<div id="hex"><h1>Day 1 asignment</h1><br></div>
 
-<button onclick="addNum()">Display result</button><br>
+	<button onclick="addNum()">Display result</button><br>
+<div id="code">
+	<code>//Jason Spriggs 10/4 <br>
+	function addNum (){<br>  
+	var n1 = 12;<br>
+	var n2 = 0x1e;<br>
+	var answer = "Answer = ";<br>
+	var n3 = n1 + n2;<br>
 
-<code>//Jason Spriggs 10/4 <br>
-function addNum (){<br>  
-var n1 = 12;<br>
-var n2 = 0x1e;<br>
-var answer = "Answer = ";<br>
-var n3 = n1 + n2;<br>
-
-console.log(answer + n3);<br>
-document.getElementById("demo1").innerHTML = (answer + n3);}
-</code>
-
+	console.log(answer + n3);<br>
+	document.getElementById("demo1").innerHTML = (answer + n3);}
+	</code>
+</div>
 <p>Code result</p>
 
 <p id="demo1"></p>

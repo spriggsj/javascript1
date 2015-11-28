@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Day 6</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<header>
+		<div id="d3top">
+			
+			<a href="index.html"><button>Day 1</button></a>
+			
+			<a href="day2.html"><button>Day 2</button></a>
+			<a href="day3.html"><button>Day 3</button></a>
+			<a href="day4.html"><button>Day 4</button></a>
+			<a href="day5.html"><button>Day 5</button></a>
+			<a href="day6.html"><button>Day 6</button></a>
+			<a href="day6homework.html"><button>Day 6 homework</button></a>
+
+		</div>
+	</header>
+
+
+
+
+
+	<div><h1>Javascript 1</h1><br><h2 id="day"> Day 6 </h2></div>
+
+	<div><h2>Control flow: Loops</h2></div>
+	
+	<div><p>Looping is the act of repeating a block of code based on a given condition. When the conditions ceases to be truthy, the loop stops.</p></div>
+
+	<div><h2>The four loops in Javascript are:</h2>
+		<ul>
+			<li>While loops</li>
+			<li>Do / while loops</li>
+			<li>for loops</li>
+			<li>for / in loops</li>
+			
+		</ul>
+	</div>
+	
+	<div><p><span class="while">While loops</span> work by evaluating a condition, if the condition is true, the loop "fires", executing all code it contains. The function will keep looping back to the top and executing until the condition becomes false, then loop stops.<br>One important concept with while loops is that you must write the code that will make the condition false, otherwise you get an infinite loop. (code has no break point and continues to evaluate)</p></div>
+
+	<div id="code">
+  		<code>
+  			var a = 0; // assign a variable named a with an initial value of 0<br>
+			while (a < 10) {  // designation of "while loop" with condition to be evaluated for truthy<br>
+    		console.log(a);  // during each iteration through the loop that returns truthy console.log (a)<br> 
+    		a++;  //  short hand to increment by 1 each time the loop has iterated through<br>
+			}<br>
+   		</code>
+	</div>
+
+	<div><p><span class="while">Do / While</span> loop is less commonly used, however it's a useful tool to have once you understand how it differs from the while loop.<br>The do / while loop will always run at least once, then it evaluates its condition. If the condition is still true, it will continue the loop.</p></div>
+
+	<div id="code">
+  		<code>
+  			var i = 1; // assign a variable named i with an initial value of 1<br>
+
+			do {  // designation of "do " statement<br>
+    		console.log(i); // First console.log (i) with out checking for truthy. then continue to console.log (i) on each iteration that returns truthy.<br>
+    		i++; // short hand to increment by 1 each time the loop has iterated through<br> 
+			} while (i < 10); // Code has already ran once before the while statement checks condition for truthy.<br>
+   		</code>
+	</div>
+
+	<div><p><span class="while">for</span> loop, the most common loop we'll use in class and that you will encounter as a programmer.<br>A for loop looks like this:</p></div>
+
+	<div id="code">
+  		<code>
+  				
+			for (statement1; statement2; statement3) {<br>
+			// code block to be executed<br>
+			}<br>
+
+   		</code>
+	</div>
+
+
+
+<div><h2>The 3 statements used in the loop define the conditions under which the loop runs.</h2>
+		<ul>
+			<li><span class="while">Statement 1</span> is executed before the loop (the code block) begins. This allows us to set up or initial state.</li><br>
+			<li><span class="while">Statement 2</span> defines the condition for running the loop</li><br>
+			<li><span class="while">Statement 3</span> is executed each time after the loop has executed. This is where we update our conditional variable. For example, increment or decrement a variable.</li>
+			</ul>
+	</div>
+
+	<div id="code">
+  		<code>
+  				
+    
+			for (var i = 0; i < 10; i++) {<br>
+			// Statement 1 var i is set to initial state of 0<br>
+			// Statement 2 i < 10 defines the condition for running the loop.<br>
+			// Statement 3 i++ executes each time after the loop has executed. Incrementing i by 1<br> 
+    		console.log(i);<br>
+			}<br>
+    
+   		</code>
+	</div>
+
+<div><p>JavaScript provides two ways of controlling the flow of a loop, the <span class="while">continue</span> and <span class="while">break</span> keywords.<br><em>Continue </em>will immediately reset the loop to the next iteration, and continue on with the loop. It's basically just saying, disregard the rest of this loop and go to the next loop.</p></div>
+
+	<div id="code">
+  		<code>
+  			var i = 0;<br>
+
+			while (i < 10) {<br>
+    		if (i === 5 || i === 7) {<br>
+        	i++;<br>
+
+        	continue; // The above while loop condition excludes i when value is set to both 5 and 7. continue allows the code to skip these values and loop through the rest of the code.<br>
+    		}<br>
+
+    		console.log(i);<br>
+    		i++;<br>
+			}<br>
+   		</code>
+	</div>
+
+	<div><p>The <em>break </em>keyword will, when encountered, immediately stops the loop AND all subsequent loops.</p></div>
+
+	<div id="code">
+  		<code>   
+			for (var i = 0; i < 10; i++) {<br>
+    		console.log(i);<br>
+
+    		if (i === 6) {<br>
+        	break;} // immediately stops loop when i equals 6<br>
+			}<br>
+   		</code>
+	</div>
+
+
+	<div><p><span class="while">for / in</span> statement loops through the properties of an object:<br>A for / in loop looks like this:</p></div>
+
+	<div id="code">
+  		<code>
+			var person = {fname:"John", lname:"Doe", age:25}; <br>
+			// Object person with named vale pairs or properties fname: "john", name:"Doe", age:25<br>
+
+			var text = "";<br>
+			// variable named text assigned empty quotes<br>
+
+			var x;<br>
+			// variable declared x with undfined value<br>
+
+			for (x in person) {<br>
+			// for loop assigning value to variable x<br>
+
+    		text += person[x];<br>
+ 			// variable text iterates through object person assigning values to variable x<br>   
+			}<br>
+   		</code>
+	</div>
+
+	<div><h2>Looping & Arrays</h2></div>
+	
+	<div><p>So all our work with arrays up to this point has been retrieving array indexes one at a time using a numbered bracket notation, IE <em>fruits[3]</em>. This is useful, but what if your application requirements were such that you needed to do something to every element in the array?<br>
+	This where were the power of loops really becomes apparent. A for loop is a perfect mechanism for iterating over each element in an array.
+	</p></div>
+
+
+	<div id="code">
+  		<code>    
+			var fruits = ["cherry", "apple", "peach", "plum"];<br>
+			for (var i = 0; i < fruits.length; i++) {<br>
+			// for loop statement 1 sets the initial value of i<br>
+			// for loop statement 2 defines the condition for running the loop.<br>
+			// for loop statement 3 executes each time after the loop has executed.Incrementing i by 1<br>
+    		console.log(fruits[i]);<br>
+			}<br>
+   		</code>
+	</div>
+
+
+
+	<script type="text/javascript" src="js/scripts.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -15,35 +15,85 @@
 			<a href="day2.html"><button>Day 2</button></a>
 			<a href="day3.html"><button>Day 3</button></a>
 			<a href="day4.html"><button>Day 4</button></a>
+			<a href="day5.html"><button>Day 5</button></a>
+			<a href="day6.html"><button>Day 6</button></a>
+
 
 		</div>
 	</header>
 	<div><h1>Javascript 1</h1><br><h2 id="day"> Day 3 </h2></div>
 
 
-<p><h2>What are your favorites</h2></p>
+	<p><h2>What are your favorites</h2></p>
 
-<button id="button"onclick="newFunction()">pop quiz favorites</button>
-<p>movie food pet</p>
-<div id="pet"></div>
+	<button id="button"onclick="newFunction()">pop quiz favorites</button>
+	<p>movie food pet</p>
+	<div id="pet"></div>
 
-<p><h2>How old are you?</h2></p>
-<button id="ifLogic"onclick="ageFunction()">if logic</button>
-<p>That would make you </p>
-<div id="old"></div>
+<div id="code">
+	<code>
+		function newFunction (){<br>
+var favMovie = prompt("enter your favorite movie");<br>
+var favFood = prompt("enter your favorite food");<br>
+var petName = prompt("enter the name of your favorite pet");<br>
+var con = (favMovie + ' ' + favFood + ' ' + petName);<br>
 
-<p><h2>if else switch statement</h2></p>
-<button id="switch"onclick="switcheroo()">switch statement</button>
+console.log(  favMovie + ", " + favFood + ", " + petName);<br>
+ document.getElementById("pet").innerHTML = con;<br>
+}<br>
+		
+	</code>
+</div>
 
 
 
-<p><h2>What to do today assignment</h2></p>
+	<p><h2>How old are you?</h2></p>
+		<button id="ifLogic"onclick="ageFunction()">if logic</button>
+		<p>That would make you </p>
+	<div id="old"></div>
+
+<div id="code">
+	<code>
+		function ageFunction (){<br>
+	var yBorn = prompt("enter year born 1973");<br>
+	var  age = 2015 - yBorn;<br>
+	if (age < 18){<br>
+	  console.log("you are a teen");<br>
+	  alert(age);<br>
+	document.getElementById("old").innerHTML = (age + " too young");<br>
+	} else{<br>
+	  console.log("you are old");<br>
+	  alert(age);<br>
+	document.getElementById("old").innerHTML = (age);}<br>
+	}<br>
+	</code>
+</div>
+
+	<p><h2>if else switch statement</h2></p>
+	<button id="switch"onclick="switcheroo()">switch statement</button>
+
+<div id="code">
+	<code>
+		
+	</code>
+</div>
 
 
-<button id="switch"onclick="doit()">to do</button>
-<div id="do"></div>
 
-<a href="#d3top"><button>Back to top</button></a>
+	<p><h2>What to do today assignment</h2></p>
+
+
+	<button id="switch"onclick="doit()">to do</button>
+	<div id="do"></div>
+
+	<a href="#d3top"><button>Back to top</button></a>
+
+<div id="code">
+	<code>
+		
+	</code>
+</div>
+
 
 <script type="text/javascript" src="js/app.js"></script>
 </body>
