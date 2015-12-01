@@ -215,4 +215,84 @@ practice("taco", 2);
 	return (numbers[0] + numbers[1] + numbers[2] + numbers[3]) / 4;
 } */
 
+//************************************************************************//
+//************************************************************************//
+var count = 0;
 
+function myClickHandler(event){
+   count ++;
+  document.getElementById("myCount").innerHTML = count;
+  
+  pyramidAdd();
+}
+
+  document.getElementById("myButton").onclick = myClickHandler;
+
+
+function myClickHandler2(event){
+  if (count === 0){
+    return 0;
+  }else{
+   count --;
+  document.getElementById("myCount").innerHTML = count;
+ pyramidAdd();
+}
+  
+}
+
+  document.getElementById("myButton2").onclick = myClickHandler2;
+
+ 
+function pyramidAdd(){
+  var outputStr = "";
+  for ( i = 0; i < count; i++) {
+  outputStr += "<p>";
+      for (var k =0; k<=i; k++){
+        outputStr += "#";}
+      }
+
+    
+document.getElementById("myPyramid").innerHTML = outputStr;
+}
+
+/*
+print p tag
+print #    1
+close p tag
+
+print p tag
+print ##   2
+close p tag
+
+start loop 
+  print p tag
+    start loop 2
+      print #
+    end loop 2
+  close p tag
+end loop*/
+
+//***************************************************************//
+//***************************************************************//
+function getItem () {
+  var item = document.getElementById("inputItem").value;
+  document.getElementById("inputItem").value = "";
+
+  var list = document.getElementById("listContain");
+
+  list.insertAdjacentHTML('afterbegin', '<p>' + item + '<p>');
+}
+
+//****************************************************************//
+
+function submitHandler(event) {
+  var textboxTable = document.getElementById("inputTable");
+  var table = document.getElementById("table");
+  var row = table.insertRow(0);
+  var cell = row.insertCell(0);
+  
+  cell.innerHTML = textboxTable.value;
+  textboxTable.value = "";
+  
+}
+document.getElementById("buttonTable").onclick = submitHandler;
