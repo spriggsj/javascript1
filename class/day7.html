@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Day7</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<header>
+		<div id="d3top">
+			
+			<a href="index.html"><button>Day 1</button></a>
+			
+			<a href="day2.html"><button>Day 2</button></a>
+			<a href="day3.html"><button>Day 3</button></a>
+			<a href="day4.html"><button>Day 4</button></a>
+			<a href="day5.html"><button>Day 5</button></a>
+			<a href="day6.html"><button>Day 6</button></a>
+			<a href="day6homework.html"><button>Day 6 homework</button></a>
+			<a href="day7.html"><button>Day 7</button></a>
+			<a href="day7homework.html"><button>Day 7 homework</button></a>
+		</div>
+	</header>
+		
+
+		<div><h2>Print list to screen</h2><br><h3>Option 1</h3></div>
+
+		<div id="container">
+    	<input id="inputItem"></input><button onclick="getItem()">Submit</button>
+    	<div id="listContain"></div>
+  		</div>
+
+		<div id="code">
+  			<code>
+				function getItem () {<br>
+  				var item = document.getElementById("inputItem").value;<br>
+  				document.getElementById("inputItem").value = "";<br>
+
+  				var list = document.getElementById("listContain");<br>
+
+  				list.insertAdjacentHTML('afterbegin', '<p>' + item + '<p>');<br>
+				}<br>
+			</code>
+		</div>
+
+		<div><h3>Option 2</h3></div>
+
+		<input type="text" id="inputTable" /> <button id="buttonTable">Submit</button>
+		<table id="table">
+		
+		</table>
+
+		<div id="code">
+  			<code>
+				function submitHandler(event) {<br>
+				var textboxTable = document.getElementById("inputTable");<br>
+				var table = document.getElementById("table");<br>
+				var row = table.insertRow(0);<br>
+				var cell = row.insertCell(0);<br>
+	
+				cell.innerHTML = textboxTable.value;<br>
+				textboxTable.value = "";<br>
+	
+				}<br>
+				document.getElementById("buttonTable").onclick = submitHandler;<br>
+			</code>
+		</div>
+
+
+
+
+	<script type="text/javascript" src="js/scripts.js"></script>
+</body>
+</html>
