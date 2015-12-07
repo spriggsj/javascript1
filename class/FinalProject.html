@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript1_FinalProject2</title>
+	<link rel="stylesheet" type="text/css" href="css/final.css">
+</head>
+<body>
+<div id="wrapper">
+<div id = "title"><h1>JavaScript1_FinalProject2</h1></div>
+
+<p><h2>Select Priority</h2> </p>
+
+<div class="onoffswitch">
+    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" onclick="checkAddress(this)">
+    <label class="onoffswitch-label" for="myonoffswitch">
+        <span class="onoffswitch-inner"></span>
+        <span class="onoffswitch-switch"></span>
+    </label>
+</div>
+
+
+
+
+
+		<label  id="input1Idlabel"></label>
+		<input type="text" name="input1" id="input1Id" placeholder="Secondary Priority">
+		<br>
+		<label  id="input2Idlabel"></label>
+		<input type="text" name="input2" id="input2Id" placeholder="Enter Priority">
+		
+		<br>
+		<input type="button" name="goBtn" id="goBtnId" value="Add to list!">
+		<p><h1>Prioritized list:</h1></p>
+</div>
+		<div id="textOutputId">
+			<ol id="test">
+				
+			</ol>
+		</div>
+
+		
+
+
+	
+	<script type="text/javascript" src="js/FinalProject.js"></script>
+</body>
+</html>
