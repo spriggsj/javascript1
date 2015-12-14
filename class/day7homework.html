@@ -10,14 +10,19 @@
 		<div id="d3top">
 			
 			<a href="index.html"><button>Day 1</button></a>
-			<a href="day2.html"><button>Day 2</button></a>
-			<a href="day3.html"><button>Day 3</button></a>
-			<a href="day4.html"><button>Day 4</button></a>
-			<a href="day5.html"><button>Day 5</button></a>
-			<a href="day6.html"><button>Day 6</button></a>
-			<a href="day6homework.html"><button>Day 6 homework</button></a>
-			<a href="day7.html"><button>Day 7</button></a>
-			<a href="day7homework.html"><button>Day 7 homework</button></a>
+      
+      <a href="day2.html"><button>Day 2</button></a>
+      <a href="day3.html"><button>Day 3</button></a>
+      <a href="day4.html"><button>Day 4</button></a>
+      <a href="day5.html"><button>Day 5</button></a>
+      <a href="day6.html"><button>Day 6</button></a>
+      <a href="day6homework.html"><button>Day 6 homework</button></a>
+      <a href="day7.html"><button>Day 7</button></a>
+      <a href="day7homework.html"><button>Day 7 homework</button></a>
+      <a href="day8.html"><button>Day 8</button></a>
+      <a href="day9.html"><button>Day 9</button></a>
+      <a href="day10.html"><button>Day 10</button></a>
+      <a href="FinalProject.html"><button>Final project</button></a>
 		</div>
 	</header>
 			<div><h2>Pyramid clicker</h2></div>
@@ -45,15 +50,12 @@ function myClickHandler(event){<br>
   document.getElementById("myButton").onclick = myClickHandler;<br>
 
 
-function myClickHandler2(event){<br>
-  if (count === 0){<br>
-    return 0;<br>
-  }else{<br>
+function myClickHandler2(event) {<br>
+  if (count > 0) {<br>
    count --;<br>
-  document.getElementById("myCount").innerHTML = count;<br>
- pyramidAdd();<br>
-}<br>
-  
+   document.getElementById("myCount").innerHTML = count;<br>
+   pyramidAdd();<br>
+  }  <br>
 }<br>
 
   document.getElementById("myButton2").onclick = myClickHandler2;<br>
@@ -62,14 +64,19 @@ function myClickHandler2(event){<br>
 function pyramidAdd(){<br>
   var outputStr = "";<br>
   for ( i = 0; i < count; i++) {<br>
+  <textarea readonly> outputStr += "<p>"; </textarea>
   outputStr += "<p>";<br>
       for (var k =0; k<=i; k++){<br>
-        outputStr += "#";}<br>
+        outputStr += "#";<br>
       }<br>
+      <textarea readonly> outputStr += "</p>"; </textarea>
+      outputStr += "</p>";<br>
+     }<br>
 
     
 document.getElementById("myPyramid").innerHTML = outputStr;<br>
 }<br>
+
 			</code>
 			</div>
 

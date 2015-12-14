@@ -7,50 +7,73 @@ function addItem1ToList()
 	}
 }
 
+function printListToTextOutput()
+{
+	//domTextOutput(todoArray.join(", "));
+	// modified to use a loop to print
+	var outputStr = "";
+	/*
+	for(var i=0; i<todoArray.length; i++) {
+		outputStr += todoArray[i];
+		if(i<todoArray.length-1) {
+			outputStr += ", ";
+		}
+	}
+	*/
+	// alternate output option - numbered list
+	
+	for(var i=0; i<todoArray.length; i++) {
+		outputStr += (i+1) + ") ";
+		outputStr += todoArray[i];
+		if(i<todoArray.length-1) {
+			outputStr += "<br />";
+		}
+	}
+	
+	domTextOutput(outputStr);
+}
 
 function addItem2ToBeginningOfList()
 {
-
+	// todoArray.unshift();
+	// Add item to the beginning of the list using loops
 	if(domInput2() !== "") {
-		todoArray.unshift(domInput2());}
+		// I will use a loop to shift items in the array
+		for(var i=todoArray.length; i>0; i--) {
+			todoArray[i] = todoArray[i-1];
+		}
+		// now add item to beginning of array
+		todoArray[0] = domInput2();
+	}
+	
+	
 }
 
+
+// This function is called every time the button is clicked
 function handleGoButtonClick(event) {
-	addItem1ToList();	
+	// do events here
+	// push input 1 text to list
+	addItem1ToList();
+	// clear contents of input 1
 	domInput1("");
-	addItem2ToBeginningOfList();	
-	domInput2("");	
-    assignment();
-    assignment2();
+	
+	// *** BONUS ***
+	// call function to add input 2 to beginning of list
+	addItem2ToBeginningOfList();
+	// clear contents of input 2
+	domInput2("");
+	// *** END BONUS ***
+	
+	// call function to print list to Text Output
+	printListToTextOutput();
 }
 
- function assignment () {
-  for (var i = 0; i < todoArray.length; i++) {
-    //console.log(todoArray[i]);
-   
-  textOutputId.innerHTML = (todoArray.join(", "));}
-  
-}
 
-/*function assignment2 () {
-  for (var i = 0; i < todoArray.length; i++) {
-    
-   var e = todoArray.toString();
-  textOutputId2.innerHTML = (e) + '\n';}
-  
-}*/
 
-function assignment2 () {
-    var index;
-    var text = "<ul>";
-    
-    for (i = 0; i < todoArray.length; i++) {
-        text += "<li>" + todoArray[index] + "</li>";
-    }
-    text += "</ul>";
-    textOutputId2.innerHTML = text;
-}
+// HELPER FUNCTIONS - The following code is helper functions to get you started
 
+// This function sets and returns the value of Input 1
 function domInput1(newval) {
 	var input1Reference = document.getElementById("input1Id");
 	if(newval !== undefined) {
@@ -59,6 +82,7 @@ function domInput1(newval) {
 	return input1Reference.value;
 }
 
+// This function sets and returns the value of Input 2
 function domInput2(newval) {
 	var input2Reference = document.getElementById("input2Id");
 	if(newval !== undefined) {
@@ -67,6 +91,7 @@ function domInput2(newval) {
 	return input2Reference.value;
 }
 
+// This function sets and returns the value of Input 2
 function domTextOutput(newval) {
 	var textOutputReference = document.getElementById("textOutputId");
 	if(newval !== undefined) {
@@ -74,6 +99,11 @@ function domTextOutput(newval) {
 	}
 }
 
+/* This is an Immediately Invoked Function Expression (IIFE)
+   The code here runs immediately after the page loads.
+   In this case, we are setting up an event handler for
+   button presses.
+*/
 (function() {
 	document.getElementById("goBtnId").onclick = handleGoButtonClick;
 }());

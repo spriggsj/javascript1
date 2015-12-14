@@ -19,3 +19,135 @@ h3 {color: red;}
 }
 
 .while {color: blue;}
+
+textarea {position: relative;
+    float: right;
+					
+}
+
+#priority1 {
+	background-color:red;
+	height: 10px;
+	width: 20px;
+}
+
+#secondary1 {
+	background-color:blue;
+	height: 10px;
+	width: 20px;
+}
+
+.on  { background:blue; }
+.off { background:red; }
+
+.onoffswitch {
+    position: relative; width: 127px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+    display: none;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid black; border-radius: 25px;
+}
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+    content: "Priority";
+    padding-left: 10px;
+    background-color: #1a1a1a; color: #FFFFFF;
+}
+.onoffswitch-inner:after {
+    content: "Secondary";
+    padding-right: 10px;
+    background-color: #595959; color: #FFFFFF;
+    text-align: right;
+}
+.onoffswitch-switch {
+    display: block; width: 16px; margin: 7px;
+    background: #BEC2D1;
+    position: absolute; top: 0; bottom: 0;
+    right: 93px;
+    border: 2px solid black; border-radius: 25px;
+    transition: all 0.3s ease-in 0s; 
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
+}
+
+#goBtnId {
+	background-color: #595959;
+	color: #FFFFFF;
+	border: 2px solid black; border-radius: 25px;
+}
+
+* { 
+    margin: 0;
+    padding: 0;
+  }
+  footer, section, header, aside, figure {
+    display: block;
+  }
+  body {
+    padding: 2em;
+    font-size: 15px;
+    font-family: helvetica, arial, sans-serif;
+  }
+  form {
+    width: 280px;
+    background: #333;
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px 10px;
+  }
+  #newitem {
+    width: 160px;
+  }
+  #todolist {
+    width: 280px;
+    margin: 10px;
+  }
+  #todolist li {
+    border-radius: 2px;
+    list-style: none;
+    background: #eee;
+    padding: 5px 10px;
+    margin-bottom: 5px;
+    position: relative;
+  }
+  #todolist li:nth-child(2n){
+    background: #ccc;
+  }
+  #todolist li:hover:after,
+  #todolist li.done:after {
+    content: '✔';
+    color: #060;
+    position: absolute;
+    right: 5px;    
+  }
+  #todolist li.done:hover:after {
+    content: 'x';
+    font-weight: bold;
+    color: #c00;
+    position: absolute;
+    right: 5px;    
+  }
+  #wrapper {
+
+  	position: absolute;
+    top: 29px;
+    right: 15px;
+  }
+
+   

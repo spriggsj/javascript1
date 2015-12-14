@@ -1,51 +1,51 @@
-		// section for iphone style button and hidden display of text area
+
 
 function toggleState(item){
     if(item.className == "on") {
         item.className="off";
     } else {
         item.className="on";
-         	}
+          }
 }
-          	
+            
 
 function checkAddress(checkbox){
     if (checkbox.checked){
-        	inputDisplay();
-    		getfocus1();
+          inputDisplay();
+        getfocus1();
 
 
-    	}else {
-    		inputDisplayVisible();
-    		getfocus();
+      }else {
+        inputDisplayVisible();
+        getfocus();
     }
 }
 
 
 
-		document.getElementById("input2Id").style.display = "none";
-    	document.getElementById("input2Idlabel").style.display = "none";
+    document.getElementById("input2Id").style.display = "none";
+      document.getElementById("input2Idlabel").style.display = "none";
 
-    	document.getElementById("input1Id").style.display = "none";
-    	document.getElementById("input1Idlabel").style.display = "none";
+      document.getElementById("input1Id").style.display = "none";
+      document.getElementById("input1Idlabel").style.display = "none";
 
 
 function inputDisplay() {
     document.getElementById("input1Id").style.display = "none";
-	document.getElementById("input1Idlabel").style.display = "none";
+  document.getElementById("input1Idlabel").style.display = "none";
 
-	document.getElementById("input2Id").style.display = "inline";
+  document.getElementById("input2Id").style.display = "inline";
     document.getElementById("input2Idlabel").style.display = "inline";
 }
 
 function inputDisplayVisible(){
-	
+  
 
     document.getElementById("input1Id").style.display = "inline";
     document.getElementById("input1Idlabel").style.display = "inline";
 
     document.getElementById("input2Id").style.display = "none";
-	document.getElementById("input2Idlabel").style.display = "none";
+  document.getElementById("input2Idlabel").style.display = "none";
 
 }
 
@@ -53,75 +53,44 @@ function inputDisplayVisible(){
     document.getElementById("input1Id").focus();
 }
 
-		function getfocus1() {
+    function getfocus1() {
     document.getElementById("input2Id").focus();
 }
 
-/////////////////////////////////////////////////////////////
 
-   /*  
-  something foud online that has cool functionality
-      (function(){
-
-  var todo = document.querySelector( '#todolist' ),
-      form = document.querySelector( 'form' ),
-      field = document.querySelector( '#newitem' );
-
-    
-  form.addEventListener( 'submit', function( ev ) {
-    todo.innerHTML += '<li>' + field.value + '</li>';
-    field.value = '';
-    field.focus();
-    ev.preventDefault();
-  }, false);
-
-  todo.addEventListener( 'click', function( ev ) {
-    var t = ev.target;
-    if ( t.tagName === 'LI' ) {
-      if ( t.classList.contains( 'done' ) ) {
-        t.parentNode.removeChild( t );
-      } else {  
-        t.classList.add( 'done' );
-      }
-    };
-    ev.preventDefault();
-  }, false);
-
-})();*/
-///////////////////////////////////////////////////////////////////////////////////////////
 var todoArray = [];
 
 function domInput1(newval) {
-	var input1Reference = document.getElementById("input1Id");
-	if(newval !== undefined) {
-		input1Reference.value = newval;
-	}
-	return input1Reference.value;
+  var input1Reference = document.getElementById("input1Id");
+  if(newval !== undefined) {
+    input1Reference.value = newval;
+  }
+  return input1Reference.value;
 }
 
 function domInput2(newval) {
-			var input2Reference = document.getElementById("input2Id");
-			if(newval !== undefined) {
-				input2Reference.value = newval;
-			}
-			return input2Reference.value;
-		}
+      var input2Reference = document.getElementById("input2Id");
+      if(newval !== undefined) {
+        input2Reference.value = newval;
+      }
+      return input2Reference.value;
+    }
 
 
 function addItem1ToList()
 {
-	if(domInput1() !== "") {
-		todoArray.push(domInput1());
-	}
+  if(domInput1() !== "") {
+    todoArray.push(domInput1());
+  }
 }
 
 
 function addItem2ToBeginningOfList()
 {
-	if(domInput2() !== "") {
-		todoArray.unshift(domInput2());
-	}
-	
+  if(domInput2() !== "") {
+    todoArray.unshift(domInput2());
+  }
+  console.log((todoArray.length) + "add");
 }
 
 
@@ -129,37 +98,89 @@ function printListToTextOutput()
 {
   var outputStr = "";
   for ( var i = 0; i<todoArray.length; i++) {
-  	outputStr += "<li>";
-  	outputStr += todoArray[i];
-  	if(i <todoArray.length){
+    outputStr += "<li class='noStrike'>";
+    outputStr +=  todoArray[i];
+    if(i <todoArray.length){
+
+      outputStr += "<input type='checkbox' id='check' onclick='deleteCheckBox(this)'><label id='ldel'>Delete</label></input>"; 
+      outputStr += "<input type='checkbox' id='edit' onclick='editLi()'><label id='ledit'>Edit</label></input>";
+      outputStr += "<input type='checkbox' id='done' class='noStrike' onClick='strikethrough(this)'><label id='ldone'>Done</label></input>";
+      //outputStr += "<input type='checkbox' id='strike' onclick='check(this)'>"; 
       outputStr += "</li>";
-     }
-
-}
       
-    
+     }
+     
+}
+          
 document.getElementById("test").innerHTML = outputStr;
+
+}
+
+
+/////////////////////////////////////////////////////////////////////////
+
+
+function deleteCheckBox() {
+    var ol = document.getElementById('test');
+    var li = ol.children;
+    for (var i=0; i < li.length; i++) {
+        while(li[i] && li[i].children[0].checked) {
+            ol.removeChild(li[i]);
+            var numb = ([i]);
+            todoArray.splice(numb,1);
+            
+        }
+        console.log((todoArray.length) + "sub");
+    }
+}
+
+
+// Toggles strike through for items in list
+function strikethrough(element) {
+    var parent = element.parentNode;
+
+    if (parent.classList.contains("noStrike")) {
+        parent.setAttribute("class", "strike");
+    }
+    else {
+        parent.setAttribute("class", "noStrike");
+    }
 }
 
 
 
+function editLi(){
+   var x = prompt('enter new task');
+  
+  console.log(x);
+  var ol = document.getElementById('test');
+    var li = ol.children;
+    for (var i=0; i < li.length; i++) {
+        while(li[i] && li[i].children[0].checked){
+          var pos = ([i]);
+          console.log(pos);
+          todoArray.splice(pos,1,x);
+        }
+}
+}
+///////////////////////////////////////////////////////////////////////////
 // This function is called every time the button is clicked
 function handleGoButtonClick(event) {
-	
-	addItem1ToList();
-	
-	domInput1("");
+  
+  addItem1ToList();
+  
+  domInput1("");
 
-	addItem2ToBeginningOfList();
-			
-	domInput2("");
-		
-	printListToTextOutput();
+  addItem2ToBeginningOfList();
+      
+  domInput2("");
+    
+  printListToTextOutput();
 
 }
 
 
 
 (function() {
-	document.getElementById("goBtnId").onclick = handleGoButtonClick;
+  document.getElementById("goBtnId").onclick = handleGoButtonClick;
 }());

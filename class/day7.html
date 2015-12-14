@@ -19,6 +19,10 @@
 			<a href="day6homework.html"><button>Day 6 homework</button></a>
 			<a href="day7.html"><button>Day 7</button></a>
 			<a href="day7homework.html"><button>Day 7 homework</button></a>
+			<a href="day8.html"><button>Day 8</button></a>
+			<a href="day9.html"><button>Day 9</button></a>
+			<a href="day10.html"><button>Day 10</button></a>
+			<a href="FinalProject.html"><button>Final project</button></a>
 		</div>
 	</header>
 		
@@ -26,7 +30,8 @@
 		<div><h2>Print list to screen</h2><br><h3>Option 1</h3></div>
 
 		<div id="container">
-    	<input id="inputItem"></input><button onclick="getItem()">Submit</button>
+    	<input id="inputItem"></input>
+    	<button onclick="getItem()">Submit</button>
     	<div id="listContain"></div>
   		</div>
 
@@ -45,7 +50,8 @@
 
 		<div><h3>Option 2</h3></div>
 
-		<input type="text" id="inputTable" /> <button id="buttonTable">Submit</button>
+		<input type="text" id="inputTable" /> 
+		<button id="buttonTable">Submit</button>
 		<table id="table">
 		
 		</table>
@@ -53,22 +59,63 @@
 		<div id="code">
   			<code>
 				function submitHandler(event) {<br>
-				var textboxTable = document.getElementById("inputTable");<br>
-				var table = document.getElementById("table");<br>
-				var row = table.insertRow(0);<br>
-				var cell = row.insertCell(0);<br>
-	
-				cell.innerHTML = textboxTable.value;<br>
-				textboxTable.value = "";<br>
-	
-				}<br>
-				document.getElementById("buttonTable").onclick = submitHandler;<br>
+  var textboxTable = document.getElementById("inputTable");<br>
+  var table = document.getElementById("table");<br>
+  var row = table.insertRow(0);<br>
+  var cell = row.insertCell(0);<br>
+  
+  cell.innerHTML = textboxTable.value;<br>
+  textboxTable.value = "";<br>
+  
+}<br>
+document.getElementById("buttonTable").onclick = submitHandler;<br>
 			</code>
 		</div>
 
+	<div><h2>Sudo Code</h2>How to use pseudocode to go from an idea/ task to working code.<br>
+
+Write out what functions / tasks your code should accomplish<br>
+
+Print a pyramid of “#” symbols<br>
+Use 2 loops<br>
+- one to print out the rows<br>
+- one to print out the characters<br>
+
+Write out the first few steps that the program will take to get a feel for the flow of the system.<br>
+print p tag<br>
+print #<br>
+close p tag<br>
+
+print p tag<br>
+print ##<br>
+close p tag<br>
+
+Result:<br>
+<p>#</p><br>
+<p>##</p><br>
+
+Hopefully you notice where the tasks are repetitive once you’ve written out a few steps. Repetitive tasks are a good candidate for <br>using loops to code them more simply.<br>
+
+Now that we have determined the functionality of our task, write pseudocode in the same format that you would eventually write code<br>
+
+start loop<br>
+	print p tag<br>
+		start loop 2<br>
+			print #<br>
+		end loop 2<br>
+	close p tag<br>
+end loop<br>
+Update HTML page<br>
+
+Now that we have our pseudocode, slowly convert it to actual JavaScript code<br>
+<h2>Continued on day 7 homework</h2>
+
+<a href="day7homework.html"><button>Day 7 homework</button></a>
 
 
+</div>
 
-	<script type="text/javascript" src="js/scripts.js"></script>
+
+	<script type="text/javascript" src="js/day7.js"></script>
 </body>
 </html>
